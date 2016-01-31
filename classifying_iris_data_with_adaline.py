@@ -48,4 +48,14 @@ cost_plot.plot(range(1, len(ada.cost_) + 1), ada.cost_, marker='o')
 cost_plot.set_xlabel('Epochs')
 cost_plot.set_ylabel('Sum-Squared-Error')
 
+adaSGD = adaline.AdalineSGD(n_iter=15, eta=0.01, random_state=1)
+adaSGD.fit(X_std, y)
+plotting_stuff.plot_decision_regions(X_std, y, classifier=adaSGD)
+
+fig4 = plt.figure()
+cost_SGD_plot = fig4.add_subplot(111)
+cost_SGD_plot.plot(range(1, len(adaSGD.cost_) + 1), adaSGD.cost_, marker='o')
+cost_SGD_plot.set_xlabel('Epochs')
+cost_SGD_plot.set_ylabel('Sum-Squared-Error')
+
 plt.show()
