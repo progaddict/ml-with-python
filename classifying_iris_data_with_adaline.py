@@ -20,15 +20,4 @@ initial_data_plot.legend(loc='upper left')
 initial_data_plot.scatter(X[:50, 0], X[:50, 1], color='red', marker='o', label='setosa')
 initial_data_plot.scatter(X[50:100, 0], X[50:100, 1], color='blue', marker='x', label='versicolor')
 
-ppn = adaline.AdalineGD(eta=0.1, n_iter=10)
-ppn.fit(X, y)
-fig2 = plt.figure()
-errors_plot = fig2.add_subplot(111)
-errors_plot.set_title('errors during fitting')
-errors_plot.set_xlabel('Epochs')
-errors_plot.set_ylabel('Number of misclassifications')
-errors_plot.plot(range(1, len(ppn.cost_) + 1), ppn.cost_, marker='o')
-
-plotting_stuff.plot_decision_regions(X, y, classifier=ppn)
-
 plt.show()
