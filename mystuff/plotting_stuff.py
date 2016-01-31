@@ -24,3 +24,4 @@ def plot_decision_regions(X, y, classifier, resolution=0.02):
     for idx, cl in enumerate(np.unique(y)):
         decision_boundaries_plot.scatter(x=X[y == cl, 0], y=X[y == cl, 1], alpha=0.8, c=cmap(idx), marker=markers[idx],
                                          label=cl)
+    return fig
